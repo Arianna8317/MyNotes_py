@@ -7,7 +7,7 @@ class Notebook:
     __notes = []
     __show = Show()
     __index = 0
-    __indexes = []
+    __indexes = [] # стек индексов
 
     def __init__(self):
         try:

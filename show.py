@@ -1,9 +1,7 @@
 class Show:
-    def greeting(self):
-        print("Приложение ЗАМЕТКИ")
-
+    
     def main_menu(self):
-        print("Выберите, что необходимо сделать с заметками:\n"
+        print("Что сделать с заметками :\n\n"
               "\t1. Добавить новую\n"
               "\t2. Работать с существующей \n"
               "\t3. Показать все\n"
@@ -11,7 +9,7 @@ class Show:
               "\t0. Выход")
 
     def secondary_menu(self):
-        print("Что вы хотите сделать? Выберите пункт меню:\n"
+        print("\nВыберите пункт меню:\n\n"
               "\t1. Прочитать заметку\n"
               "\t2. Изменить заметку\n"
               "\t3. Удалить заметку\n")
@@ -25,10 +23,9 @@ class Show:
 
 
     def note(self, note):
-        result = f"ID: {str(note.get_id())}|\t"
-        result += f"[{str(note.get_date())}]\t"
-        result += f"[{str(note.get_name())}]\n"
-        result += f"{str(note.get_text())}\n"
+        result = f" [ {str(note.get_id())} ]\t"
+        result += f"[ {str(note.get_date())} ]\n"
+        result += f"\"{str(note.get_name())} \" {str(note.get_text())}\n"
         print(result)
 
     def total(self, count):
@@ -39,10 +36,10 @@ class Show:
         print(f"Заметка успешно {info[key]}!")
 
     def input_name(self):
-        return input(f"Введите название заметки:")
+        return input(f"Введите название заметки: ")
 
     def input_text(self):
-        return input(f"Текст заметки:")
+        return input(f"Текст заметки: ")
 
     def edit(self, note):
         note.set_text(self.input_text())
@@ -54,7 +51,7 @@ class Show:
         number = 0
         while True:
             try:
-                number = int(input(f"Введите номер {endings[preset]}: "))
+                number = int(input(f"\nВведите номер {endings[preset]}: "))
             except ValueError:
                 self.error_message()
                 continue

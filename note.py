@@ -16,7 +16,7 @@ class Note:
         self.__text = text
 
     def update(self):
-        self.__date = datetime.now().strftime('%Y, %B %d, %A | %H:%M')
+        self.__date = datetime.now().strftime('%Y, %B %d, %A  %H:%M')
 
     def get_id(self):
         return self.__id
